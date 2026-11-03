@@ -93,9 +93,10 @@ compute_s_n(10)
 ## 8
 
 ```{r}
-s_n <- vector(mode = "numeric", length = 25)
+m <- 25
+s_n <- vector(mode = "numeric", length = m)
 
-for (n in 1:25) {
+for (n in 1:m) {
   s_n[n] <- compute_s_n(n)
 }
 ```
@@ -107,7 +108,7 @@ s_n
 ## 9
 
 ```{r}
-n <- 1:25
+n <- 1:m
 s_n <- sapply(n, compute_s_n)
 s_n 
 ```
@@ -127,6 +128,6 @@ formula_results <- n_values * (n_values + 1) * (2 * n_values + 1) / 6
 ```
 
 ```{r}
-# Check if every single entry in your loop matches the formula
+# Check if every single entry in the loop matches the formula
 identical(s_n, formula_results)
 ```
